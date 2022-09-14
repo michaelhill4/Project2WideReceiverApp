@@ -12,15 +12,15 @@ Food.init(
         autoIncrement: true,
         primaryKey: true,
       },
-      food: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      calories: {
+      restaurant: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      restaurant: {
+      calories: {
           type: DataTypes.STRING,
           allowNull: false,
         },
