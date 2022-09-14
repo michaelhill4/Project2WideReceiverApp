@@ -13,7 +13,6 @@ Food.init(
         primaryKey: true,
       },
       name: {
-=======
         type: DataTypes.STRING,
         allowNull: false,
       },
