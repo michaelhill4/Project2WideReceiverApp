@@ -13,6 +13,7 @@ Food.init(
         primaryKey: true,
       },
       name: {
+=======
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -21,9 +22,9 @@ Food.init(
         allowNull: false,
       },
       calories: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
     },
     {
       sequelize,
