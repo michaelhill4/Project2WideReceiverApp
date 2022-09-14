@@ -13,15 +13,16 @@ Food.init(
         primaryKey: true,
       },
       name: {
+=======
         type: DataTypes.STRING,
         allowNull: false,
       },
       restaurant: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       calories: {
-          type: DataTypes.STRING,
+          type: DataTypes.INTEGER,
           allowNull: false,
         },
     },
