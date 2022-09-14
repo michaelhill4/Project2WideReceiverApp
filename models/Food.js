@@ -12,7 +12,11 @@ Food.init(
         autoIncrement: true,
         primaryKey: true,
       },
-      food: {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      restaurant: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -20,10 +24,6 @@ Food.init(
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      restaurant: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
     },
     {
       sequelize,
