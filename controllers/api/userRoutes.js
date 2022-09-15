@@ -119,5 +119,9 @@ router.post('/login', async (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.post('/food', (req, res) => {
+    
+  })
  
 module.exports = router;
