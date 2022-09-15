@@ -2,16 +2,9 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth')
 
-<<<<<<< HEAD
-const withAuth = require('../utils/auth');
-
-router.get('/', async (req, res) => {
-=======
 router.get('/', withAuth, async (req, res) => {
->>>>>>> 29db55e0ac0e6f16928b80af81d56bee79b3972d
       res.render('homepage');
   });
-
 
 
 router.get('/login', (req, res) => {

@@ -7,6 +7,8 @@ const seedAll = async () => {
   await seedFood();
 
   process.exit(0);
+  
+  console.log('seeded');
 };
 
 seedAll();
