@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Food } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -22,6 +22,57 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// /api/users/create
+router.post('/create', async(req,res)=>{
+  try{
+    const userinput = req.body;
+    let maxCalories=0;
+    let foodArray=[];
+    console.log(userinput);
+    if(userinput=="Small"){
+      maxCalories=850;
+    }
+    else if(userinput=="Medium"){
+      maxCalories=1250;
+    }
+    else{
+      maxCalories = 1500;
+    }
+    let randRestaurant = Math.floor(Math.random()*4);
+    let pickedRestaurant="";
+    if(randRestaurant ===0){
+              pickedRestaurant="McDonalds";
+          }
+          else if (randRestaurant ===1){
+              pickedRestaurant ="Taco Bell";
+          }
+          else if (randRestaurant===2){
+              pickedRestaurant="Chick-Fil-A";
+          }
+          else {
+              pickedRestaurant = "Subway";
+          }
+          const foodItems =await Food.findAll({
+            where:{
+              restaurant:pickedRestaurant
+            }
+          });
+          for(let calorieCounter = 0;calorieCounter<maxCalories; calorieCounter =calorieCounter +foodItems[i].calories){
+                    let i = Math.floor(Math.random()*foodItems.length);
+                    console.log(foodItems[i].name);
+                    foodArray.push(foodItems[i].name);
+                }
+                // dont look at this; need nonsense variable; 
+                foodArray.pop();
+                console.log(foodArray);
+                res.status(200);
+  }
+  catch(err){
+    console.log(err);
+  }
+})
 
 router.post('/login', async (req, res) => {
     try {
