@@ -126,8 +126,8 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  router.post('/food', (req, res) => {
-    
-  })
+  router.get('/generator', (req, res) => {
+    res.render("generator")
+  });
  
 module.exports = router;
