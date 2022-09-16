@@ -68,7 +68,11 @@ router.post('/create', async(req,res)=>{
                   console.log(foodArray);
                 }
                 foodArray.pop();
-                res.status(200).json(foodArray);
+               res.render('display',{
+                pickedRestaurant,foodArray,calorieCounter,logged_in:req.session.logged_in,
+               })
+
+
   }
 
   catch(err){
