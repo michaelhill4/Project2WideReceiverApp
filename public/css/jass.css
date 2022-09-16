@@ -89,9 +89,9 @@ nav a:hover {
 }
 
 img {
-  max-width: 100%;
-  min-width: 50%;
-  height: auto;
+  max-width: 300px;
+  min-width: 200px;
+  height: 200px;
 }
 
 /* CARDS */
