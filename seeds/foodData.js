@@ -75,7 +75,32 @@ const foodData = [
         name:"Spicy Deluxe Sandwich",
         restaurant:"Chick-Fil-A",
         calories:550
-    }
+    },
+    {
+        name:"6-inch Philly",
+        restaurant:"Subway",
+        calories:480
+    },
+    {
+        name:'6-inch Meatball Sub',
+        restaurant:"Subway",
+        calories:410
+    },
+    {
+        name:'6-inch Roast Beef',
+        restaurant:"Subway",
+        calories:300
+    }, 
+    {
+        name:'6-inch Tuna',
+        restaurant:"Subway",
+        calories:430
+    },
+    {
+        name:"6-inch Black Forest Ham",
+        restaurant:"Subway",
+        calories: 270
+    },
 ]
 
 
