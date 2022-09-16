@@ -1,7 +1,5 @@
 {{#if loggedIn}}
 <section class="container">
-  <div class="painting-details">
-  </div>
   <div class="container">
     {{!-- create target for restaraunt selected--}}
     <div class="restaurant-selected"></div>
@@ -15,7 +13,11 @@
 <a href="/login">You must login first to view this page</a>
 {{/if}}
     <h3>Please select a calorie range that you are interested in! Please type in "small", "medium", or "large".</h3>
-  <textarea>"Small, medium or large?"</textarea>
+    <form class="form generator-form">
+      <div class="form-group">
+        <textarea id="userPreference">"Small, medium or large?"</textarea>
+      </div>
+    </form>  
   <button type="button">Randomize Meal!</button>
 
   <script src = '/js/generate.js'></script>
