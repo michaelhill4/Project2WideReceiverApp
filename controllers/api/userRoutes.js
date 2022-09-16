@@ -59,16 +59,22 @@ router.post('/create', async(req,res)=>{
               restaurant:pickedRestaurant
             }
           });
-          for(let calorieCounter = 0;calorieCounter<maxCalories; calorieCounter =calorieCounter +foodItems[i].calories){
-                    let i = Math.floor(Math.random()*foodItems.length);
-                    console.log(foodItems[i].name);
-                    foodArray.push(foodItems[i].name);
+
+          let calorieCounter=0;
+                for (let i =0;calorieCounter<maxCalories;i++){
+                  let j = Math.floor(Math.random()*foodItems.length);
+                  foodArray.push(foodItems[j].name);
+                  calorieCounter=calorieCounter+foodItems[j].calories
+                  console.log(foodArray);
                 }
-                // dont look at this; need nonsense variable; 
                 foodArray.pop();
-                console.log(foodArray);
-                res.status(200);
+               res.render('display',{
+                pickedRestaurant,foodArray,calorieCounter,logged_in:req.session.logged_in,
+               })
+
+
   }
+
   catch(err){
     console.log(err);
   }
