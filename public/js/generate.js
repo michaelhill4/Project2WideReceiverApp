@@ -11,6 +11,11 @@ const generateFormHandler = async(event)=>{
             body:JSON.stringify({foodPreference}),
             headers:{'Content-Type':'application/json'},
         });
+        if (response.ok) {
+            document.location.replace('/api/users/create');
+          } else {
+            alert('Failed to log in.');
+          }
     }
 
 };
