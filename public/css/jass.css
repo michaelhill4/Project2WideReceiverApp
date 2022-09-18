@@ -41,7 +41,7 @@ main {
   flex-wrap: wrap;
   flex-grow: 1;
   background-color: none;
-  background-image: url(../images/80s\ background.jpg);
+  background-image: linear-gradient(to right, rgb(82, 82, 218), rgb(123, 242, 123));
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -149,6 +149,11 @@ img {
 }
 .jumbotron {
   width: 100%;
+  
+}
+#jumbtron {
+  background: rgb(128,128,128);
+  background: rgba(128, 128, 128, 0.5);
 }
 
 /* LAYOUT */
