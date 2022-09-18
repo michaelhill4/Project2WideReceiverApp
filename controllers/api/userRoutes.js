@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Router } = require('express');
 const { User, Food } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -29,6 +30,7 @@ router.post('/create', async(req,res)=>{
   try{
     const userinput = req.body;
     let maxCalories=0;
+    let lastCalCount= 0 ;
     let foodArray=[];
     console.log(userinput);
     if(userinput=="Small"){
@@ -64,20 +66,26 @@ router.post('/create', async(req,res)=>{
                 for (let i =0;calorieCounter<maxCalories;i++){
                   let j = Math.floor(Math.random()*foodItems.length);
                   foodArray.push(foodItems[j].name);
+                  lastCalCount = foodItems[j].calories
                   calorieCounter=calorieCounter+foodItems[j].calories
+                  console.log(calorieCounter);
                   console.log(foodArray);
                 }
                 foodArray.pop();
+                calorieCounter=calorieCounter - lastCalCount;
                res.render('display',{
                 pickedRestaurant,foodArray,calorieCounter,logged_in:req.session.logged_in,
                })
-
-
   }
+  
 
-  catch(err){
+  catch(err){ 
     console.log(err);
   }
+})
+
+router.get('/api/users/create',async(req,res)=>{
+  res.render('display');
 })
 
 router.post('/login', async (req, res) => {
@@ -126,8 +134,6 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  router.get('/generator', (req, res) => {
-    res.render("generator")
-  });
+
  
 module.exports = router;
