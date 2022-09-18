@@ -1,12 +1,10 @@
-// const { Food } = require("../../models");
-
-// const { response } = require("express");
 
 // const generateFormHandler = async (event ) => {
 //     event.preventDefault();
 const generateFormHandler = async(event)=>{
     event.preventDefault();
-    const foodPreference = document.querySelect('#userPreference').value.trim();
+    const foodPreference = document.querySelector('#userPreference').value.trim();
+    console.log(foodPreference);
     if(foodPreference){
         const response = await fetch('/api/users/create',{
             method:"POST",

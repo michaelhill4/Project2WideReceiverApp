@@ -1,23 +1,26 @@
 {{#if loggedIn}}
-<section class="container">
-  <div class="container">
-    {{!-- create target for restaraunt selected--}}
-    <div class="restaurant-selected"></div>
-    {{!-- create target for menu items selected--}}
-    <div class="menu-items"></div>
-    {{!-- create target for calorie total --}}
-    <div class="calorie-total"></div>
+<form class = 'form generator-form'>
+  <div class = 'form-group'>
+    <label for="userPreference">Small,Medium, or Large Meal?</label>
+    <input class ="form-input" type="text" id="userPreference"/>
   </div>
-</section>
+  <div class = 'form-group'>
+    <button class = 'btn btn-primary' type="submit">Generate</button>
+  </div>
+</form>
+<script src = '/js/generate.js'></script>
 {{else}}
-<a href="/login">You must login first to view this page</a>
 {{/if}}
-    <h3>Please select a calorie range that you are interested in! Please type in "small", "medium", or "large".</h3>
+
+
+
+    {{!-- <h3>Please select a calorie range that you are interested in! Please type in "small", "medium", or "large".</h3>
     <form class="form generator-form">
       <div class="form-group">
-        <textarea id="userPreference">"Small, medium or large?"</textarea>
+        <label for="userPreference">"Small, Medium or Large?"</label>
+        <input class ="form-input"type = 'text' id="userPreference"/>
       </div>
     </form>  
-  <button type="button">Randomize Meal!</button>
+  <button class ="btn btn-primary" type="submit">Randomize Meal!</button>
 
-  <script src = '/js/generate.js'></script>
+  <script src = '/js/generate.js'></script> --}} --
