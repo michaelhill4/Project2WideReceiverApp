@@ -84,7 +84,7 @@ router.post('/create', async(req,res)=>{
   }
 })
 
-router.get('/api/users/create',async(req,res)=>{
+router.get('/create',async(req,res)=>{
   res.render('display');
 })
 
