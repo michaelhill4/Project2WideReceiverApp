@@ -41,7 +41,7 @@ main {
   flex-wrap: wrap;
   flex-grow: 1;
   background-color: none;
-  background-image: linear-gradient(to right, rgb(82, 82, 218), rgb(123, 242, 123));
+  background-image: linear-gradient(to bottom, rgb(82, 82, 218), rgb(123, 242, 123));
   background-repeat: no-repeat;
   background-size: 100%;
 }
